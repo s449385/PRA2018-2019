@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+	<xsd:annotation>
+		<xsd:documentation xml:lang="pl">Definicja wydziału informatyki</xsd:documentation>
+	</xsd:annotation>
+	<xsd:element name="WYDZIAL">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Nazwa" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+				<xsd:element ref="Adres" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+				<xsd:element ref="Pracownik" minOccurs="1" maxOccurs="unbounded"></xsd:element>
+				<xsd:element ref="Przedmiot" minOccurs="0" maxOccurs="unbounded"></xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="Id" use="required" type="xsd:ID"></xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Adres">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Ulica" minOccurs="1" maxOccurs="1" type="xsd:string"></xsd:element>
+				<xsd:element name="Numer" minOccurs="1" maxOccurs="1" type="xsd:string"></xsd:element>
+				<xsd:element name="Kod_pocztowy">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:minLength value="6"/>
+							<xsd:maxLength value="6"/>
+							<xsd:pattern value="\d{2}-\d{3}"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="Miejscowosc" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Pracownik">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Imie" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+				<xsd:element name="Nazwisko" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+				<xsd:element name="Tytul" type="xsd:string" minOccurs="0" maxOccurs="1"></xsd:element>
+				<xsd:element name="Kategoria" minOccurs="0" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="Naukowy"/>
+							<xsd:enumeration value="Administracyjny"/>
+							<xsd:enumeration value="Techniczny"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element ref="Adres" minOccurs="1" maxOccurs="unbounded"></xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="Pracownik_Id" use="required" type="xsd:ID"></xsd:attribute>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="Przedmiot">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Kod" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+				<xsd:element name="Nazwa" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+				<xsd:element name="Opis" type="xsd:string" minOccurs="1" maxOccurs="1"></xsd:element>
+				<xsd:element name="Liczba_uczestnikow" minOccurs="1" maxOccurs="1">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:integer">
+							<xsd:minInclusive value="6"/>
+							<xsd:maxInclusive value="400"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+			</xsd:sequence>
+			<xsd:attribute name="Pracownik_ref" type="xsd:IDREF" use="required"/>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
+

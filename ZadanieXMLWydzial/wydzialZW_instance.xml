@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WYDZIAL Id="ID-5">
+	<Nazwa>Wydział chemii</Nazwa>
+	<Adres>
+		<Ulica>Mickiewicza</Ulica>
+		<Numer>15</Numer>
+		<Kod_pocztowy>61-612</Kod_pocztowy>
+		<Miejscowosc>Poznan</Miejscowosc>
+	</Adres>
+	<Pracownik Pracownik_Id="ID-1">
+		<Imie>Jan</Imie>
+		<Nazwisko>Kowalski</Nazwisko>
+		<Tytul>Profesor</Tytul>
+		<Kategoria>Naukowy</Kategoria>
+		<Adres>
+			<Ulica>Kosmonautow</Ulica>
+			<Numer>2</Numer>
+			<Kod_pocztowy>11-111</Kod_pocztowy>
+			<Miejscowosc>Poznan</Miejscowosc>
+		</Adres>
+	</Pracownik>
+	<Pracownik Pracownik_Id="ID-2">
+		<Imie>Joanna</Imie>
+		<Nazwisko>Siekiera</Nazwisko>
+		<Tytul>Magister</Tytul>
+		<Kategoria>Administracyjny</Kategoria>
+		<Adres>
+			<Ulica>Lesna</Ulica>
+			<Numer>5</Numer>
+			<Kod_pocztowy>22-222</Kod_pocztowy>
+			<Miejscowosc>Swarzedz</Miejscowosc>
+		</Adres>
+	</Pracownik>
+	<Pracownik Pracownik_Id="ID-3">
+		<Imie>Karol</Imie>
+		<Nazwisko>Baraniak</Nazwisko>
+		<Kategoria>Techniczny</Kategoria>
+		<Adres>
+			<Ulica>Opolna</Ulica>
+			<Numer>13</Numer>
+			<Kod_pocztowy>33-333</Kod_pocztowy>
+			<Miejscowosc>Poznan</Miejscowosc>
+		</Adres>
+		<Adres>
+			<Ulica>Krakowska</Ulica>
+			<Numer>67</Numer>
+			<Kod_pocztowy>44-444</Kod_pocztowy>
+			<Miejscowosc>Wrzesnia</Miejscowosc>
+		</Adres>
+	</Pracownik>
+	<Przedmiot Pracownik_ref="ID-2">
+		<Kod>PC</Kod>
+		<Nazwa>podstawy chemii</Nazwa>
+		<Opis>stezenie roztworow</Opis>
+		<Liczba_uczestnikow>278</Liczba_uczestnikow>
+	</Przedmiot>
+	<Przedmiot Pracownik_ref="ID-1">
+		<Kod>ZMC</Kod>
+		<Nazwa>zastosowanie matematyki w chemii</Nazwa>
+		<Opis>przypomnienie materialu i wprowadzenie do calek</Opis>
+		<Liczba_uczestnikow>199</Liczba_uczestnikow>
+	</Przedmiot>
+	<Przedmiot Pracownik_ref="ID-3">
+		<Kod>PCO</Kod>
+		<Nazwa>podstawy chemi organicznej</Nazwa>
+		<Opis>wzory strukturalne</Opis>
+		<Liczba_uczestnikow>300</Liczba_uczestnikow>
+	</Przedmiot>	
+</WYDZIAL>
